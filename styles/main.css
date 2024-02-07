@@ -21,6 +21,7 @@ main div button {
   border: 1px solid var(--text);
 
   transition: opacity 0.4s;
+  cursor: pointer;
 }
 
 main div button:disabled {
@@ -38,6 +39,7 @@ main div button svg path {
   font-family: "star Guard Italic";
   background: var(--peter);
   -webkit-background-clip: text;
+  padding-right: 10px;
 }
 
 #member__name.peter {

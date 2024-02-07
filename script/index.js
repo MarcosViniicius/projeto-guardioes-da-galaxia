@@ -11,6 +11,7 @@ let activeMember = 0;
 const images = document.getElementById("images");
 const menu = document.getElementById("menu");
 const memberName = document.getElementById("member__name");
+const navigation = document.getElementById("navigation");
 
 function changeStatusButton() {
   const prev = document.getElementById("button-prev");
@@ -21,16 +22,26 @@ function changeStatusButton() {
   next.disabled = isLast;
 }
 
-function navigationMember(direction) {
-  activeMember = activeMember + direction;
+function changeMember(memberId) {
+  activeMember = memberId;
 
   const member = members[activeMember];
   console.log(activeMember, member);
   images.style.transform = `translateY(${-100 * activeMember}vh)`;
   memberName.classList = member.id;
+  changeName(member.name);
+
   changeStatusButton();
+}
+function navigationMember(direction) {
+  changeMember(activeMember + direction);
 }
 
 function changeMenu() {
   menu.classList.toggle("active");
+  navigation.classList.toggle("active");
+}
+
+function setMember(memberId) {
+  changeMember(memberId);
 }
